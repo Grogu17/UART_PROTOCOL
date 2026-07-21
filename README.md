@@ -6,7 +6,6 @@ This project is my implementation of the UART (Universal Asynchronous Receiver-T
 
 The main objective of this project was to understand serial communication, finite state machines (FSMs), and RTL design.
 
----
 
 ## Features
 
@@ -16,7 +15,7 @@ The main objective of this project was to understand serial communication, finit
 - 8-bit data transmission
 - FSM-based implementation
 - Verilog testbench for verification
-- 
+  
 ## UART Frame Format
 
 - 1 Start Bit
