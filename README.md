@@ -31,6 +31,11 @@ The testbench transmits the test byte `8'h37` (`8'b0011_0111`). The receiver sam
 
 ![UART Simulation Waveform](Waveform.png)
 
+## RTL Architecture
+Synthesized gate-level schematic generated in AMD Xilinx Vivado:
+
+![RTL Schematic](schematic.pdf)
+
 ## Author
 * **Sanjana Adhikari**  
 * B.Tech – Electronics and Communication Engineering
