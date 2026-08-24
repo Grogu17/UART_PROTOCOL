@@ -6,7 +6,7 @@ RTL implementation of the UART (Universal Asynchronous Receiver-Transmitter) pro
 This project implements standard UART serial communication in Verilog HDL. The primary objective is to demonstrate finite state machine (FSM) architecture, clock division techniques, and RTL verification in digital design.
 
 ## Features
-* **Parameterized Baud Rate**: Configurable using `CLKS_PER_BIT` ($\frac{f_{\text{clk}}}{\text{Baud Rate}}$).
+* **Parameterized Baud Rate**: Configurable using `CLKS_PER_BIT`.
 * **Frame Format (8-N-1)**:
   * 1 Start Bit (`0`)
   * 8 Data Bits (LSB First)
@@ -19,8 +19,8 @@ This project implements standard UART serial communication in Verilog HDL. The p
 ## Project Structure
 * `uart_transmitter.v` – UART transmitter RTL module.
 * `uart_receiver.v` – UART receiver RTL module with center-aligned sampling.
-* `uart_testbench.v` – Verilog testbench validating end-to-end transmission.
-* `waveform.png` – Simulation waveform output from Vivado.
+* `UART_TESTBENCH.v` – Verilog testbench validating end-to-end transmission.
+* `Waveform.png` – Simulation waveform output from Vivado.
 
 ## Tools Used
 * **HDL**: Verilog
