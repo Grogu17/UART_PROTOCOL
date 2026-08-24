@@ -1,50 +1,36 @@
 # UART Protocol Implementation in Verilog
-RTL implementation of the UART protocol in Verilog including UART transmitter, receiver, and simulation testbench.
+
+RTL implementation of the UART (Universal Asynchronous Receiver-Transmitter) protocol in Verilog HDL, including transmitter, receiver, and a simulation testbench.
 
 ## About the Project
-This project is my implementation of the UART (Universal Asynchronous Receiver-Transmitter) protocol using Verilog HDL. The project consists of separate UART Transmitter and UART Receiver modules along with a testbench to verify the design through simulation.
-
-The main objective of this project was to understand serial communication, finite state machines (FSMs), and RTL design.
-
+This project implements standard UART serial communication in Verilog HDL. The primary objective is to demonstrate finite state machine (FSM) architecture, clock division techniques, and RTL verification in digital design.
 
 ## Features
+* **Parameterized Baud Rate**: Configurable using `CLKS_PER_BIT` ($\frac{f_{\text{clk}}}{\text{Baud Rate}}$).
+* **Frame Format (8-N-1)**:
+  * 1 Start Bit (`0`)
+  * 8 Data Bits (LSB First)
+  * No Parity
+  * 1 Stop Bit (`1`)
+* **Mid-Bit Sampling**: Receiver samples at the midpoint of each bit period to maximize timing margin.
+* **FSM-Based Design**: Explicit state transitions for `IDLE`, `START`, `DATA`, `STOP`, and `CLEANUP`.
+* **Automated Testbench**: Self-checking testbench to verify transmitted data against received data.
 
-- UART Transmitter
-- UART Receiver
-- Parameterized baud rate using `CLKS_PER_BIT`
-- 8-bit data transmission
-- FSM-based implementation
-- Verilog testbench for verification
-  
-## UART Frame Format
-
-- 1 Start Bit
-- 8 Data Bits
-- No Parity Bit
-- 1 Stop Bit
-  
-## Project Files
-
-- `uart_transmitter.v` – UART transmitter module
-- `uart_receiver.v` – UART receiver module
-- `uart_tb.v` – Testbench for simulation
-
+## Project Structure
+* `uart_transmitter.v` – UART transmitter RTL module.
+* `uart_receiver.v` – UART receiver RTL module with center-aligned sampling.
+* `uart_testbench.v` – Verilog testbench validating end-to-end transmission.
+* `waveform.png` – Simulation waveform output from Vivado.
 
 ## Tools Used
+* **HDL**: Verilog
+* **Simulation & Synthesis**: AMD Xilinx Vivado
 
-- Verilog HDL
-- Xilinx Vivado
+## Simulation Results
+The testbench transmits the test byte `8'h37` (`8'b0011_0111`). The receiver samples the incoming serial line and reconstructs the data byte with `rx_done` asserted upon completion.
 
-
-
-## Simulation
-
-The design was verified using a Verilog testbench. The transmitter sends 8-bit data serially, and the receiver correctly receives and reconstructs the transmitted data.
-
-
+![UART Simulation Waveform](waveform.png)
 
 ## Author
-
-**Sanjana Adhikari**
-
-B.Tech – Electronics and Communication Engineering
+* **Sanjana Adhikari**  
+* B.Tech – Electronics and Communication Engineering
