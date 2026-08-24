@@ -29,7 +29,7 @@ This project implements standard UART serial communication in Verilog HDL. The p
 ## Simulation Results
 The testbench transmits the test byte `8'h37` (`8'b0011_0111`). The receiver samples the incoming serial line and reconstructs the data byte with `rx_done` asserted upon completion.
 
-![UART Simulation Waveform](waveform.png)
+![UART Simulation Waveform](Waveform.png)
 
 ## Author
 * **Sanjana Adhikari**  
